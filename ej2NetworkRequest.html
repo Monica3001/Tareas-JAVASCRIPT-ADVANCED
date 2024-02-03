@@ -1,0 +1,61 @@
+<!-- Using async and await, implement the necessary code to perform an HTTP POST request. 
+To create a new post, use the following URL: link (Method: Post). 
+The body of the request must contain a post object with the following information:
+title and Flag Completed. The post data must be transmitted following the compilation of a form.
+
+ https://jsonplaceholder.typicode.com/posts -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="container">
+    
+    </div>
+  </body>
+
+  <script>
+
+
+    async function postRequest (url, metodo, datos=null){
+    try{
+        const options = {
+            method: metodo,
+            headers:{
+                 "Content-Type" : "application/json",
+                },
+            body: datos ? JSON.stringify(datos) : null
+    }
+
+    const response = await fetch (url, options)
+    const jsonResponse = await response.json()
+    console.log(response)
+
+    }catch(error){
+    console.log(error.message)
+    } }
+
+    const container =document.getElementById("container")
+    container.innerHTML = `
+    <form id = "form">
+        <div>
+          <label>Title</label>
+          <input type="text" id="inputTitle" />
+        </div>
+        <div>
+          <label>conpleted</label>
+          <input type="checkbox" id="checkbox" />
+        </div>
+        <button type="submit" id="button">click</button>
+      </form>
+    `
+
+postRequest("https:jsonplaceholder.typicode.com/posts", "POST", container)
+
+  </script>
+</html>
