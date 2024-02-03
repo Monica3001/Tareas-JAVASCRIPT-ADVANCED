@@ -1,0 +1,38 @@
+<!-- Starting from the previous exercise, write a method that recovers the 
+    data saved in localStorage and prints them in the console. -->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>local storage</h1>
+<script>
+
+const user = {
+    id: 1,
+    name: "John",
+    age: 25,
+  };
+  
+  localStorage.setItem ("user", JSON.stringify(user))
+  localStorage.setItem ("name", JSON.stringify(user.name))
+  localStorage.setItem ("id", JSON.stringify(user.id))
+  localStorage.setItem ("age", JSON.stringify(user.age))
+
+  console.log(localStorage.getItem("name"))
+  console.log(localStorage.getItem("id"))
+  console.log(localStorage.getItem("age"))
+  console.log(localStorage.getItem("user"))
+
+</script>
+
+
+</body>
+</html>
+
+
+
