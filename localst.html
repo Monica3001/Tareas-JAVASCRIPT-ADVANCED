@@ -1,0 +1,39 @@
+<!-- Local Storage
+ Write a function that saves the user object in `localStorage` with its 'user' key.
+Tips: Remember to use the available `JSON methods` (parse, stringify)
+const user = {
+    id: 1,
+    name: "John",
+    age: 25,
+  };
+   -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>local storage</h1>
+<script>
+
+const user = {
+    id: 1,
+    name: "John",
+    age: 25,
+  };
+
+  localStorage.setItem ("ususrio", JSON.stringify(user))
+  localStorage.setItem ("user", JSON.stringify(user.name))
+  localStorage.setItem ("id", JSON.stringify(user.id))
+  localStorage.setItem ("age", JSON.stringify(user.age))
+  
+
+</script>
+
+
+</body>
+</html>
+
